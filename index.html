@@ -13,8 +13,6 @@
     .app{width:100%;max-width:480px;height:100vh;max-height:900px;display:flex;flex-direction:column;position:relative;background:#fdf9f0;overflow:hidden;box-shadow:0 2px 40px rgba(0,0,0,.15);}
     .app::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(180,160,120,.18) 31px,rgba(180,160,120,.18) 32px);pointer-events:none;z-index:0;}
     .app::after{content:'';position:absolute;top:0;left:52px;bottom:0;width:1.5px;background:rgba(220,100,100,.18);pointer-events:none;z-index:0;}
-
-    /* 온보딩 */
     .ob{position:absolute;inset:0;z-index:200;background:#fdf9f0;display:flex;flex-direction:column;overflow:hidden;}
     .ob::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(180,160,120,.18) 31px,rgba(180,160,120,.18) 32px);pointer-events:none;}
     .ob-slides{flex:1;display:flex;overflow:hidden;}
@@ -34,19 +32,13 @@
     .ob-dot.active{background:#b07050;width:22px;border-radius:4px;}
     .ob-btn{width:100%;padding:14px;background:#4a3728;border:none;border-radius:10px;font-size:16px;font-weight:600;color:#fdf9f0;cursor:pointer;font-family:inherit;}
     .ob-skip{text-align:center;margin-top:.75rem;font-size:12px;color:#bba990;cursor:pointer;}
-
-    /* 헤더 */
     .top-bar{padding:.9rem 1.1rem .7rem 1.4rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:1;border-bottom:2px solid rgba(180,160,120,.25);}
     .top-bar-title{font-size:18px;font-weight:600;color:#4a3728;}
     .top-bar-date{font-size:12px;color:#9a8070;}
-
-    /* 페이지 */
     .pages{flex:1;overflow-y:auto;overflow-x:hidden;position:relative;z-index:1;-webkit-overflow-scrolling:touch;}
     .pages::-webkit-scrollbar{width:3px;}
     .page{display:none;padding:1rem 1.2rem 1.5rem 1.4rem;}
     .page.active{display:block;}
-
-    /* 탭바 */
     .nav{display:flex;border-top:2px solid rgba(180,160,120,.3);background:#fdf6e8;flex-shrink:0;position:relative;z-index:1;padding-bottom:env(safe-area-inset-bottom);}
     .nav-btn{flex:1;padding:8px 2px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;border:none;background:none;color:#c4aa88;transition:all .15s;font-family:inherit;}
     .nav-btn.active{color:#4a3728;}
@@ -54,8 +46,6 @@
     .nav-label{font-size:9px;font-weight:500;}
     .nav-dot{width:4px;height:4px;border-radius:50%;background:#b07050;margin-top:2px;opacity:0;}
     .nav-btn.active .nav-dot{opacity:1;}
-
-    /* 일기 */
     .dtabs{display:flex;border-bottom:2px dashed rgba(180,160,120,.4);margin-bottom:1rem;}
     .dtab{flex:1;padding:8px 4px 10px;background:transparent;border:none;cursor:pointer;font-size:12px;color:#bba990;transition:all .15s;border-bottom:3px solid transparent;margin-bottom:-2px;display:flex;align-items:center;justify-content:center;gap:4px;font-family:inherit;}
     .dtab.active{color:#4a3728;font-weight:600;border-bottom:3px solid #b07050;}
@@ -204,7 +194,7 @@
     .bbw{height:5px;background:rgba(180,160,120,.2);border-radius:3px;overflow:hidden;}
     .bb{height:5px;border-radius:3px;background:#9a8070;width:0%;}
     .bt{font-size:13px;color:#4a3728;margin-top:8px;font-weight:500;text-align:center;}
-    .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;}
+    .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
     .snbtn{padding:12px 6px 10px;border:1.5px solid rgba(180,160,120,.3);border-radius:12px;background:rgba(255,252,240,.85);cursor:pointer;text-align:center;transition:all .18s;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;font-family:inherit;}
     .snbtn:hover{transform:scale(1.04);}
     .snbtn.active{border:2px solid #9a7a5a;background:rgba(154,122,90,.1);}
@@ -263,152 +253,117 @@
     .pvcl{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:18px;width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;}
     .toast{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);background:#4a3728;color:#fdf9f0;font-size:13px;padding:8px 18px;border-radius:20px;opacity:0;transition:opacity .3s;white-space:nowrap;pointer-events:none;z-index:300;}
     .toast.show{opacity:1;}
+    /* ===== 칼로리 탭 ===== */
+    .cal-goal-bar{background:rgba(255,252,240,.85);border:1.5px solid rgba(180,160,120,.35);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;}
+    .cal-goal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+    .cal-goal-title{font-size:13px;font-weight:600;color:#4a3728;}
+    .cal-goal-edit{font-size:11px;color:#bba990;background:none;border:none;cursor:pointer;font-family:inherit;}
+    .cal-ring-wrap{display:flex;align-items:center;gap:14px;}
+    .cal-ring{position:relative;width:80px;height:80px;flex-shrink:0;}
+    .cal-ring svg{transform:rotate(-90deg);}
+    .cal-ring-track{fill:none;stroke:rgba(180,160,120,.2);stroke-width:7;}
+    .cal-ring-prog{fill:none;stroke-width:7;stroke-linecap:round;transition:stroke-dasharray .6s ease;}
+    .cal-ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+    .cal-ring-num{font-size:16px;font-weight:700;color:#4a3728;line-height:1;}
+    .cal-ring-lbl{font-size:8px;color:#9a8070;margin-top:1px;}
+    .cal-goal-stats{flex:1;}
+    .cal-stat-row{display:flex;justify-content:space-between;margin-bottom:5px;}
+    .cal-stat-item{text-align:center;}
+    .cal-stat-num{font-size:15px;font-weight:600;color:#4a3728;}
+    .cal-stat-lbl{font-size:10px;color:#9a8070;margin-top:1px;}
+    .cal-prog-wrap{margin-top:8px;}
+    .cal-prog-bg{height:5px;background:rgba(180,160,120,.2);border-radius:3px;overflow:hidden;}
+    .cal-prog-fill{height:5px;border-radius:3px;background:linear-gradient(90deg,#5DCAA5,#3aaa85);transition:width .6s ease;}
+    .cal-prog-fill.over{background:linear-gradient(90deg,#e05070,#c04a2a);}
+    .cal-prog-lbl{font-size:10px;color:#9a8070;margin-top:4px;text-align:right;}
+    .cal-add-form{background:rgba(255,252,240,.85);border:1.5px solid rgba(180,160,120,.3);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;}
+    .cal-form-title{font-size:12px;font-weight:600;color:#7a6050;margin-bottom:10px;}
+    .cal-inp-row{display:flex;gap:8px;margin-bottom:8px;}
+    .cal-inp{flex:1;border:none;border-bottom:1.5px dashed rgba(180,160,120,.5);padding:8px 4px;font-size:14px;color:#3a2a1a;background:transparent;outline:none;font-family:inherit;}
+    .cal-inp::placeholder{color:#c4aa88;}
+    .cal-inp-kcal{width:80px;flex:none;}
+    .cal-quick-chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
+    .cal-qchip{padding:4px 10px;border:1.5px solid rgba(180,160,120,.35);border-radius:16px;font-size:11px;color:#7a6050;background:rgba(255,252,240,.8);cursor:pointer;}
+    .cal-add-btn{width:100%;padding:11px;background:#4a3728;border:none;border-radius:8px;font-size:14px;font-weight:600;color:#fdf9f0;cursor:pointer;font-family:inherit;}
+    .cal-list-section{margin-bottom:1rem;}
+    .cal-list-title{font-size:12px;font-weight:600;color:#7a6050;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;}
+    .cal-list-clear{font-size:11px;color:#bba990;background:none;border:none;cursor:pointer;font-family:inherit;}
+    .cal-item{background:rgba(255,252,240,.85);border:1.5px solid rgba(180,160,120,.25);border-radius:10px;padding:.75rem 1rem;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+    .cal-item-icon{font-size:22px;flex-shrink:0;}
+    .cal-item-info{flex:1;}
+    .cal-item-name{font-size:14px;color:#3a2a1a;font-weight:500;}
+    .cal-item-time{font-size:10px;color:#bba990;margin-top:1px;}
+    .cal-item-kcal{font-size:15px;font-weight:700;color:#b07050;flex-shrink:0;}
+    .cal-item-del{background:none;border:none;cursor:pointer;color:#c4aa88;font-size:14px;padding:4px;}
+    .cal-empty{text-align:center;padding:2rem 0;color:#bba990;font-size:13px;}
+    .cal-week-chart{background:rgba(255,252,240,.85);border:1.5px solid rgba(180,160,120,.3);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;}
+    .cal-week-title{font-size:12px;font-weight:600;color:#7a6050;margin-bottom:12px;}
+    .cal-bars{display:flex;align-items:flex-end;gap:6px;height:70px;}
+    .cal-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end;}
+    .cal-bar{width:100%;border-radius:3px 3px 0 0;background:#9a7a5a;min-height:2px;}
+    .cal-bar.today{background:linear-gradient(180deg,#5DCAA5,#3aaa85);}
+    .cal-bar.over{background:linear-gradient(180deg,#e05070,#c04a2a);}
+    .cal-goal-popup{display:none;position:absolute;inset:0;background:rgba(60,40,20,.45);z-index:150;align-items:flex-end;justify-content:center;}
+    .cal-goal-popup.show{display:flex;}
+    .cal-goal-popbox{background:#fdf9f0;border-radius:16px 16px 0 0;padding:1.75rem 1.5rem;width:100%;border-top:2px solid rgba(180,160,120,.3);}
+    .cal-goal-poph{width:36px;height:4px;border-radius:2px;background:rgba(180,160,120,.4);margin:0 auto 1.25rem;}
+    .cal-goal-popt{font-size:16px;font-weight:600;color:#4a3728;margin-bottom:1rem;}
+    .cal-goal-presets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem;}
+    .cal-preset{padding:10px 6px;border:1.5px solid rgba(180,160,120,.3);border-radius:10px;background:rgba(255,252,240,.9);cursor:pointer;text-align:center;font-family:inherit;}
+    .cal-preset-num{font-size:16px;font-weight:700;color:#4a3728;}
+    .cal-preset-lbl{font-size:10px;color:#9a8070;margin-top:2px;}
+    .cal-goal-inp-row{display:flex;gap:8px;margin-bottom:1rem;}
+    .cal-goal-inp{flex:1;border:1.5px solid rgba(180,160,120,.4);border-radius:8px;padding:10px 12px;font-size:15px;color:#3a2a1a;background:rgba(255,252,240,.9);outline:none;font-family:inherit;}
+    .cal-goal-save{padding:10px 20px;background:#4a3728;border:none;border-radius:8px;font-size:14px;color:#fdf9f0;cursor:pointer;font-family:inherit;}
   </style>
 </head>
 <body>
 <div class="app" id="app">
 <canvas id="cc"></canvas>
-
-<!-- 온보딩 -->
 <div class="ob" id="ob">
   <div class="ob-slides" id="ob-slides">
-    <div class="ob-slide">
-      <div class="ob-emoji">📖</div>
-      <div class="ob-title">감사일기에<br>오신 걸 환영해요!</div>
-      <div class="ob-desc">매일 작은 감사를 기록하는 것만으로<br>삶이 더 풍요로워질 수 있어요 🌿</div>
-    </div>
-    <div class="ob-slide">
-      <div class="ob-emoji" style="animation-delay:.3s">✨</div>
-      <div class="ob-title">이런 기능들이<br>있어요!</div>
-      <div class="ob-features">
-        <div class="ob-feature"><div class="ob-fi">📔</div><div class="ob-ft"><strong>감사일기</strong>오늘의 감사한 순간을 자유롭게 기록해요</div></div>
-        <div class="ob-feature"><div class="ob-fi">🏆</div><div class="ob-ft"><strong>나만의 챌린지</strong>매일 실천할 작은 습관을 만들어봐요</div></div>
-        <div class="ob-feature"><div class="ob-fi">🍪</div><div class="ob-ft"><strong>포춘쿠키 명언</strong>하루 한 번 오늘의 명언을 뽑아봐요</div></div>
-        <div class="ob-feature"><div class="ob-fi">🧘</div><div class="ob-ft"><strong>명상 타이머</strong>배경 소리와 함께 명상해요</div></div>
-      </div>
-    </div>
-    <div class="ob-slide">
-      <div class="ob-emoji" style="animation-delay:.6s">🤖</div>
-      <div class="ob-title">AI가 매일<br>응원해드려요</div>
-      <div class="ob-desc">일기를 저장하면 AI가 따뜻한<br>코칭 메시지를 보내드려요 💌</div>
-      <div class="ob-features">
-        <div class="ob-feature"><div class="ob-fi">🔥</div><div class="ob-ft"><strong>연속 기록 스트릭</strong>매일 기록하면 불꽃이 켜져요!</div></div>
-        <div class="ob-feature"><div class="ob-fi">📊</div><div class="ob-ft"><strong>감정 통계</strong>나의 기분 흐름을 한눈에 봐요</div></div>
-      </div>
-    </div>
-    <div class="ob-slide">
-      <div class="ob-emoji" style="font-size:80px;animation-delay:.9s">🌿</div>
-      <div class="ob-title">준비됐나요?</div>
-      <div class="ob-desc">오늘부터 하루 5분,<br>나를 위한 작은 시간을 만들어봐요.<br><br>지금 바로 첫 번째 감사를 기록해봐요 ✏️</div>
-    </div>
+    <div class="ob-slide"><div class="ob-emoji">📖</div><div class="ob-title">감사일기에<br>오신 걸 환영해요!</div><div class="ob-desc">매일 작은 감사를 기록하는 것만으로<br>삶이 더 풍요로워질 수 있어요 🌿</div></div>
+    <div class="ob-slide"><div class="ob-emoji" style="animation-delay:.3s">✨</div><div class="ob-title">이런 기능들이<br>있어요!</div><div class="ob-features"><div class="ob-feature"><div class="ob-fi">📔</div><div class="ob-ft"><strong>감사일기</strong>오늘의 감사한 순간을 자유롭게 기록해요</div></div><div class="ob-feature"><div class="ob-fi">🏆</div><div class="ob-ft"><strong>나만의 챌린지</strong>매일 실천할 작은 습관을 만들어봐요</div></div><div class="ob-feature"><div class="ob-fi">🍪</div><div class="ob-ft"><strong>포춘쿠키 명언</strong>하루 한 번 오늘의 명언을 뽑아봐요</div></div><div class="ob-feature"><div class="ob-fi">🍽️</div><div class="ob-ft"><strong>칼로리 기록</strong>오늘 먹은 음식과 칼로리를 기록해요</div></div></div></div>
+    <div class="ob-slide"><div class="ob-emoji" style="animation-delay:.6s">🤖</div><div class="ob-title">AI가 매일<br>응원해드려요</div><div class="ob-desc">일기를 저장하면 AI가 따뜻한<br>코칭 메시지를 보내드려요 💌</div><div class="ob-features"><div class="ob-feature"><div class="ob-fi">🔥</div><div class="ob-ft"><strong>연속 기록 스트릭</strong>매일 기록하면 불꽃이 켜져요!</div></div><div class="ob-feature"><div class="ob-fi">📊</div><div class="ob-ft"><strong>감정 통계</strong>나의 기분 흐름을 한눈에 봐요</div></div></div></div>
+    <div class="ob-slide"><div class="ob-emoji" style="font-size:80px;animation-delay:.9s">🌿</div><div class="ob-title">준비됐나요?</div><div class="ob-desc">오늘부터 하루 5분,<br>나를 위한 작은 시간을 만들어봐요.<br><br>지금 바로 첫 번째 감사를 기록해봐요 ✏️</div></div>
   </div>
-  <div class="ob-bottom">
-    <div class="ob-dots" id="ob-dots">
-      <div class="ob-dot active"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div>
-    </div>
-    <button class="ob-btn" id="ob-btn" onclick="obNext()">다음 →</button>
-    <div class="ob-skip" id="ob-skip" onclick="finishOb()">건너뛰기</div>
-  </div>
+  <div class="ob-bottom"><div class="ob-dots" id="ob-dots"><div class="ob-dot active"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div></div><button class="ob-btn" id="ob-btn" onclick="obNext()">다음 →</button><div class="ob-skip" id="ob-skip" onclick="finishOb()">건너뛰기</div></div>
 </div>
-
-<!-- 헤더 -->
-<div class="top-bar">
-  <div class="top-bar-title">📖 감사일기</div>
-  <div class="top-bar-date" id="tdate"></div>
-</div>
-
-<!-- 페이지들 -->
+<div class="top-bar"><div class="top-bar-title">📖 감사일기</div><div class="top-bar-date" id="tdate"></div></div>
 <div class="pages" id="pages">
-
-  <!-- 일기 -->
   <div class="page active" id="page-diary">
     <div class="dtabs">
-      <button class="dtab active" onclick="sdt('write')" id="dt-write">
-        <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="4.5" r="2.6" stroke="currentColor" stroke-width="1.7"/><line x1="11" y1="7.1" x2="11" y2="14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9.5" x2="6" y2="7.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9.5" x2="16.5" y2="11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="7.5" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="14.5" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="6" y1="7.5" x2="4" y2="5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        오늘 쓰기
-      </button>
-      <button class="dtab" onclick="sdt('record')" id="dt-record">
-        <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="4.5" r="2.6" stroke="currentColor" stroke-width="1.7"/><line x1="11" y1="7.1" x2="11" y2="14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9" x2="5.5" y2="6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9" x2="16.5" y2="6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="7.5" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="14.5" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-        🔥연속기록
-      </button>
-      <button class="dtab" onclick="sdt('history')" id="dt-history">
-        <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="4.5" r="2.6" stroke="currentColor" stroke-width="1.7"/><line x1="11" y1="7.1" x2="11" y2="14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="10" x2="5.5" y2="11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="10" x2="16.5" y2="11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="8" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="14" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><rect x="5" y="11.5" width="5" height="3.5" rx="0.5" fill="rgba(180,160,120,0.4)" stroke="currentColor" stroke-width="0.9"/></svg>
-        지난 일기
-      </button>
+      <button class="dtab active" onclick="sdt('write')" id="dt-write"><svg width="14" height="14" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="4.5" r="2.6" stroke="currentColor" stroke-width="1.7"/><line x1="11" y1="7.1" x2="11" y2="14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9.5" x2="6" y2="7.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9.5" x2="16.5" y2="11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="7.5" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="14.5" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="6" y1="7.5" x2="4" y2="5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>오늘 쓰기</button>
+      <button class="dtab" onclick="sdt('record')" id="dt-record"><svg width="14" height="14" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="4.5" r="2.6" stroke="currentColor" stroke-width="1.7"/><line x1="11" y1="7.1" x2="11" y2="14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9" x2="5.5" y2="6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9" x2="16.5" y2="6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="7.5" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="14.5" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>🔥연속기록</button>
+      <button class="dtab" onclick="sdt('history')" id="dt-history"><svg width="14" height="14" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="4.5" r="2.6" stroke="currentColor" stroke-width="1.7"/><line x1="11" y1="7.1" x2="11" y2="14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="10" x2="5.5" y2="11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="10" x2="16.5" y2="11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="8" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="14" y2="19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><rect x="5" y="11.5" width="5" height="3.5" rx="0.5" fill="rgba(180,160,120,0.4)" stroke="currentColor" stroke-width="0.9"/></svg>지난 일기</button>
     </div>
     <div class="dpanel active" id="dp-write">
-      <div class="atb" id="atb" style="display:none">
-        <div class="at-icon">📝</div>
-        <div style="flex:1">
-          <div class="at-title">오늘 이미 기록했어요! <span class="at-streak" id="atstreak"></span></div>
-          <div class="at-prev" id="atprev"></div>
-          <div class="at-meta" id="atmeta"></div>
-          <button class="at-new" onclick="allowNew()">✏️ 오늘 일기 추가하기</button>
-        </div>
-      </div>
+      <div class="atb" id="atb" style="display:none"><div class="at-icon">📝</div><div style="flex:1"><div class="at-title">오늘 이미 기록했어요! <span class="at-streak" id="atstreak"></span></div><div class="at-prev" id="atprev"></div><div class="at-meta" id="atmeta"></div><button class="at-new" onclick="allowNew()">✏️ 오늘 일기 추가하기</button></div></div>
       <div id="wform">
-        <div class="card">
-          <div class="qlabel">✨ 오늘의 질문 <button class="rbtn" onclick="rQ()">↻</button></div>
-          <div class="qtext" id="aqt"></div>
-        </div>
+        <div class="card"><div class="qlabel">✨ 오늘의 질문 <button class="rbtn" onclick="rQ()">↻</button></div><div class="qtext" id="aqt"></div></div>
         <div class="slabel">자유롭게 기록해요</div>
         <textarea class="fta" id="jt" placeholder="감사한 것, 기억하고 싶은 순간, 오늘의 감정... 자유롭게 써보세요 🌿"></textarea>
         <div class="slabel">오늘의 사진</div>
-        <div id="pua" class="pua" onclick="document.getElementById('pfi').click()">
-          <div style="font-size:22px;margin-bottom:4px">📷</div>
-          <div style="font-size:13px;color:#9a8070">사진 첨부하기 · 최대 6장</div>
-        </div>
+        <div id="pua" class="pua" onclick="document.getElementById('pfi').click()"><div style="font-size:22px;margin-bottom:4px">📷</div><div style="font-size:13px;color:#9a8070">사진 첨부하기 · 최대 6장</div></div>
         <input type="file" id="pfi" accept="image/*" multiple onchange="hphotos(event)" style="display:none">
         <div class="pprev" id="pprev"></div>
         <div class="slabel">오늘 나의 기분</div>
         <div class="mgrid" id="mgrid"></div>
-        <button class="sbtn" onclick="saveE()">
-          <svg width="18" height="18" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="4" r="2.6" stroke="white" stroke-width="1.7"/><line x1="11" y1="6.6" x2="11" y2="14" stroke="white" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9" x2="6" y2="7" stroke="white" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9" x2="16" y2="7" stroke="white" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="8" y2="19" stroke="white" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="14" y2="19" stroke="white" stroke-width="1.7" stroke-linecap="round"/></svg>
-          저장하기
-        </button>
+        <button class="sbtn" onclick="saveE()"><svg width="18" height="18" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="4" r="2.6" stroke="white" stroke-width="1.7"/><line x1="11" y1="6.6" x2="11" y2="14" stroke="white" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9" x2="6" y2="7" stroke="white" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="9" x2="16" y2="7" stroke="white" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="8" y2="19" stroke="white" stroke-width="1.7" stroke-linecap="round"/><line x1="11" y1="14" x2="14" y2="19" stroke="white" stroke-width="1.7" stroke-linecap="round"/></svg>저장하기</button>
       </div>
-      <div class="sov" id="sov">
-        <div class="semoji" id="semoji">🌿</div>
-        <div class="smsg" id="smsg"></div>
-        <div class="sfm" id="sfm"></div>
-        <div class="sbadge" id="sbadge"></div>
-        <div style="font-size:12px;color:#bba990;margin-top:4px">잠시 후 연속기록으로 이동해요 🔥</div>
-      </div>
+      <div class="sov" id="sov"><div class="semoji" id="semoji">🌿</div><div class="smsg" id="smsg"></div><div class="sfm" id="sfm"></div><div class="sbadge" id="sbadge"></div><div style="font-size:12px;color:#bba990;margin-top:4px">잠시 후 연속기록으로 이동해요 🔥</div></div>
     </div>
-    <div class="dpanel" id="dp-record">
-      <div class="stksec">
-        <div class="stkh"><div class="stkt">🔥 이번 주 연속 기록</div><div class="stkc"><strong id="stkn">0</strong>일 연속</div></div>
-        <div class="fgrid" id="fgrid"></div>
-      </div>
-      <div class="slabel" style="margin-top:0">최근 일기</div>
-      <div id="rent"></div>
-    </div>
+    <div class="dpanel" id="dp-record"><div class="stksec"><div class="stkh"><div class="stkt">🔥 이번 주 연속 기록</div><div class="stkc"><strong id="stkn">0</strong>일 연속</div></div><div class="fgrid" id="fgrid"></div></div><div class="slabel" style="margin-top:0">최근 일기</div><div id="rent"></div></div>
     <div class="dpanel" id="dp-history"><div id="elist"></div></div>
   </div>
-
-  <!-- 챌린지 -->
   <div class="page" id="page-challenge">
-    <div class="pg-title">나만의 챌린지</div>
-    <div class="pg-sub">매일 실천할 나만의 습관을 만들어요</div>
-    <div class="ctips">
-      <span class="chip" onclick="achip('아침 물 한 잔 마시기')">💧 아침 물 한 잔</span>
-      <span class="chip" onclick="achip('미라클 모닝')">⏰ 미라클 모닝</span>
-      <span class="chip" onclick="achip('새벽 독서 30분')">📚 새벽 독서</span>
-      <span class="chip" onclick="achip('운동하기')">🏃 운동하기</span>
-      <span class="chip" onclick="achip('명상 10분')">🧘 명상 10분</span>
-      <span class="chip" onclick="achip('일찍 자기')">🌙 일찍 자기</span>
-    </div>
-    <div class="ch-add">
-      <input class="ch-inp" id="chinp" placeholder="나만의 챌린지를 입력해요" onkeydown="if(event.key==='Enter')ach()">
-      <button class="ch-abtn" onclick="ach()">＋</button>
-    </div>
+    <div class="pg-title">나만의 챌린지</div><div class="pg-sub">매일 실천할 나만의 습관을 만들어요</div>
+    <div class="ctips"><span class="chip" onclick="achip('아침 물 한 잔 마시기')">💧 아침 물 한 잔</span><span class="chip" onclick="achip('미라클 모닝')">⏰ 미라클 모닝</span><span class="chip" onclick="achip('새벽 독서 30분')">📚 새벽 독서</span><span class="chip" onclick="achip('운동하기')">🏃 운동하기</span><span class="chip" onclick="achip('명상 10분')">🧘 명상 10분</span><span class="chip" onclick="achip('일찍 자기')">🌙 일찍 자기</span><span class="chip" onclick="achip('무지출')">💰 무지출</span></div>
+    <div class="ch-add"><input class="ch-inp" id="chinp" placeholder="나만의 챌린지를 입력해요" onkeydown="if(event.key==='Enter')ach()"><button class="ch-abtn" onclick="ach()">＋</button></div>
     <div class="clist" id="clist"></div>
   </div>
-
-  <!-- 명언 -->
   <div class="page" id="page-quote">
-    <div class="pg-title">오늘의 명언</div>
-    <div class="pg-sub">포춘쿠키를 눌러 오늘의 명언을 뽑아보세요!</div>
+    <div class="pg-title">오늘의 명언</div><div class="pg-sub">포춘쿠키를 눌러 오늘의 명언을 뽑아보세요!</div>
     <div class="fstage">
       <div class="fhint" id="fhint">✨ 쿠키는 하루에 한 번만 뽑을 수 있어요 🍪</div>
       <div class="cwrap" id="cwrap" onclick="crack()">
@@ -419,121 +374,63 @@
       <div class="ncb" id="ncb" style="display:none">🕐 다음 쿠키까지 <span class="cd" id="cd">—</span></div>
       <div class="aban" id="aban" style="display:none"><span>🍪</span><span id="abmsg">오늘은 이미 쿠키를 뽑았어요!</span></div>
     </div>
-    <div class="qcard" id="qcard">
-      <div class="qci" id="qci"></div>
-      <div class="qct" id="qct"></div>
-      <div class="qca" id="qca"></div>
-      <div class="qbtns">
-        <button class="qbtn hrt" id="hbtn" onclick="saveQ()">♡ 보관하기</button>
-        <button class="qbtn kk" onclick="shareQ()">
-          <svg width="14" height="14" viewBox="0 0 18 18"><ellipse cx="9" cy="8.2" rx="8" ry="6.8" fill="#3A1D1D"/><circle cx="6" cy="7.8" r="1" fill="#FEE500"/><circle cx="9" cy="6.8" r="1" fill="#FEE500"/><circle cx="12" cy="7.8" r="1" fill="#FEE500"/><path d="M5.5 10 Q7.5 12 9 10.5 Q10.5 12 12.5 10" stroke="#FEE500" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
-          카카오 공유
-        </button>
-      </div>
-    </div>
-    <div class="cpsec" id="cpsec">
-      <div class="cph"><div class="cpt">✏️ 필사하기</div><button class="cpr" onclick="rCopy()">↺ 초기화</button></div>
-      <div class="cptar"><div class="cptl">오늘의 명언</div><div class="cptt" id="cptt"></div></div>
-      <textarea class="cpa" id="cpa" placeholder="위 명언을 따라 써보세요 ✍️" oninput="chkCopy()"></textarea>
-      <div class="cprow"><div class="cpbw"><div class="cpb" id="cpb"></div></div><div class="cpp" id="cpp">0%</div></div>
-      <div class="cpd" id="cpd"></div>
-    </div>
-    <div class="svwrap">
-      <div class="svt">❤️ 보관함 <span id="svct" style="font-size:11px;color:#bba990;font-weight:400"></span></div>
-      <div id="svlist"></div>
-    </div>
+    <div class="qcard" id="qcard"><div class="qci" id="qci"></div><div class="qct" id="qct"></div><div class="qca" id="qca"></div><div class="qbtns"><button class="qbtn hrt" id="hbtn" onclick="saveQ()">♡ 보관하기</button><button class="qbtn kk" onclick="shareQ()"><svg width="14" height="14" viewBox="0 0 18 18"><ellipse cx="9" cy="8.2" rx="8" ry="6.8" fill="#3A1D1D"/><circle cx="6" cy="7.8" r="1" fill="#FEE500"/><circle cx="9" cy="6.8" r="1" fill="#FEE500"/><circle cx="12" cy="7.8" r="1" fill="#FEE500"/><path d="M5.5 10 Q7.5 12 9 10.5 Q10.5 12 12.5 10" stroke="#FEE500" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>카카오 공유</button></div></div>
+    <div class="cpsec" id="cpsec"><div class="cph"><div class="cpt">✏️ 필사하기</div><button class="cpr" onclick="rCopy()">↺ 초기화</button></div><div class="cptar"><div class="cptl">오늘의 명언</div><div class="cptt" id="cptt"></div></div><textarea class="cpa" id="cpa" placeholder="위 명언을 따라 써보세요 ✍️" oninput="chkCopy()"></textarea><div class="cprow"><div class="cpbw"><div class="cpb" id="cpb"></div></div><div class="cpp" id="cpp">0%</div></div><div class="cpd" id="cpd"></div></div>
+    <div class="svwrap"><div class="svt">❤️ 보관함 <span id="svct" style="font-size:11px;color:#bba990;font-weight:400"></span></div><div id="svlist"></div></div>
   </div>
-
-  <!-- 명상 -->
   <div class="page" id="page-meditate">
-    <div class="pg-title">명상</div>
-    <div class="pg-sub">잠시 멈추고 호흡에 집중해요</div>
+    <div class="pg-title">명상</div><div class="pg-sub">잠시 멈추고 호흡에 집중해요</div>
     <div class="slabel">명상 시간</div>
-    <div class="drow">
-      <button class="dbtn sel" onclick="setD(this,3)">3분</button>
-      <button class="dbtn" onclick="setD(this,5)">5분</button>
-      <button class="dbtn" onclick="setD(this,10)">10분</button>
-      <button class="dbtn" onclick="setD(this,15)">15분</button>
-      <button class="dbtn" onclick="setD(this,20)">20분</button>
-    </div>
+    <div class="drow"><button class="dbtn sel" onclick="setD(this,3)">3분</button><button class="dbtn" onclick="setD(this,5)">5분</button><button class="dbtn" onclick="setD(this,10)">10분</button><button class="dbtn" onclick="setD(this,15)">15분</button><button class="dbtn" onclick="setD(this,20)">20분</button></div>
     <div class="twrap">
-      <div class="tcirc">
-        <svg width="160" height="160" viewBox="0 0 160 160"><circle class="ttrack" cx="80" cy="80" r="70"/><circle class="tprog" id="tprog" cx="80" cy="80" r="70" stroke="#9a7a5a" stroke-dasharray="439.82" stroke-dashoffset="0"/></svg>
-        <div class="tinner"><div class="tdisp" id="tdisp">3:00</div><div class="tphase" id="tphase">준비됐나요?</div></div>
-      </div>
-      <div class="tctrl">
-        <button class="tbtn pri" id="stbtn" onclick="togT()">▶ 시작</button>
-        <button class="tbtn" onclick="rstT()">↺ 초기화</button>
-      </div>
+      <div class="tcirc"><svg width="160" height="160" viewBox="0 0 160 160"><circle class="ttrack" cx="80" cy="80" r="70"/><circle class="tprog" id="tprog" cx="80" cy="80" r="70" stroke="#9a7a5a" stroke-dasharray="439.82" stroke-dashoffset="0"/></svg><div class="tinner"><div class="tdisp" id="tdisp">3:00</div><div class="tphase" id="tphase">준비됐나요?</div></div></div>
+      <div class="tctrl"><button class="tbtn pri" id="stbtn" onclick="togT()">▶ 시작</button><button class="tbtn" onclick="rstT()">↺ 초기화</button></div>
     </div>
-    <div class="bcard">
-      <div class="blbl">호흡 가이드</div>
-      <div class="bbw"><div class="bb" id="bb"></div></div>
-      <div class="bt" id="bt">명상을 시작하면 호흡을 안내해드려요</div>
-    </div>
+    <div class="bcard"><div class="blbl">호흡 가이드</div><div class="bbw"><div class="bb" id="bb"></div></div><div class="bt" id="bt">명상을 시작하면 호흡을 안내해드려요</div></div>
     <div class="slabel">배경 소리</div>
     <div class="sgrid" id="sgrid"></div>
-    <div class="vwrap" id="vwrap">
-      <div class="vrow">
-        <span class="vi">🔈</span>
-        <input type="range" class="vsl" id="vsl" min="0" max="100" value="50" oninput="setV(this.value)">
-        <span class="vl" id="vl">50%</span>
-        <span class="vi">🔊</span>
-      </div>
-      <div class="np" id="np" style="display:none">
-        <div class="eqb"><div class="eqbar"></div><div class="eqbar"></div><div class="eqbar"></div><div class="eqbar"></div></div>
-        <span id="npn"></span> 재생 중
-      </div>
-    </div>
+    <div class="vwrap" id="vwrap"><div class="vrow"><span class="vi">🔈</span><input type="range" class="vsl" id="vsl" min="0" max="100" value="50" oninput="setV(this.value)"><span class="vl" id="vl">50%</span><span class="vi">🔊</span></div><div class="np" id="np" style="display:none"><div class="eqb"><div class="eqbar"></div><div class="eqbar"></div><div class="eqbar"></div><div class="eqbar"></div></div><span id="npn"></span> 재생 중</div></div>
   </div>
-
-  <!-- 통계 -->
+  <!-- 칼로리 -->
+  <div class="page" id="page-calorie">
+    <div class="pg-title">칼로리 기록</div>
+    <div class="pg-sub">오늘 먹은 음식을 기록해봐요 🍽️</div>
+    <div class="cal-goal-bar">
+      <div class="cal-goal-top"><div class="cal-goal-title">오늘의 칼로리</div><button class="cal-goal-edit" onclick="openGoalPop()">목표 설정 ⚙️</button></div>
+      <div class="cal-ring-wrap">
+        <div class="cal-ring"><svg width="80" height="80" viewBox="0 0 80 80"><circle class="cal-ring-track" cx="40" cy="40" r="32"/><circle class="cal-ring-prog" id="calRingProg" cx="40" cy="40" r="32" stroke="#5DCAA5" stroke-dasharray="0 201" stroke-linecap="round" style="transform-origin:50% 50%;transform:rotate(-90deg)"/></svg><div class="cal-ring-inner"><div class="cal-ring-num" id="calTodayNum">0</div><div class="cal-ring-lbl">kcal</div></div></div>
+        <div class="cal-goal-stats"><div class="cal-stat-row"><div class="cal-stat-item"><div class="cal-stat-num" id="calGoalNum">2000</div><div class="cal-stat-lbl">목표</div></div><div class="cal-stat-item"><div class="cal-stat-num" id="calRemainNum">2000</div><div class="cal-stat-lbl">남은 칼로리</div></div></div><div class="cal-prog-wrap"><div class="cal-prog-bg"><div class="cal-prog-fill" id="calProgFill" style="width:0%"></div></div><div class="cal-prog-lbl" id="calProgLbl">0 / 2000 kcal</div></div></div>
+      </div>
+    </div>
+    <div class="cal-add-form">
+      <div class="cal-form-title">🍴 음식 추가</div>
+      <div class="cal-inp-row"><input class="cal-inp" id="calFoodName" placeholder="음식 이름" onkeydown="if(event.key==='Enter')document.getElementById('calKcal').focus()"><input class="cal-inp cal-inp-kcal" id="calKcal" type="number" placeholder="kcal" onkeydown="if(event.key==='Enter')addCalItem()"></div>
+      <div class="cal-quick-chips"><span class="cal-qchip" onclick="qCalChip('밥 한 공기',300)">🍚 밥 300</span><span class="cal-qchip" onclick="qCalChip('아메리카노',10)">☕ 아메리카노 10</span><span class="cal-qchip" onclick="qCalChip('라면',500)">🍜 라면 500</span><span class="cal-qchip" onclick="qCalChip('치킨',900)">🍗 치킨 900</span><span class="cal-qchip" onclick="qCalChip('샐러드',150)">🥗 샐러드 150</span><span class="cal-qchip" onclick="qCalChip('빵',250)">🍞 빵 250</span><span class="cal-qchip" onclick="qCalChip('계란',80)">🥚 계란 80</span><span class="cal-qchip" onclick="qCalChip('바나나',90)">🍌 바나나 90</span></div>
+      <button class="cal-add-btn" onclick="addCalItem()">+ 추가하기</button>
+    </div>
+    <div class="cal-list-section"><div class="cal-list-title"><span>📋 오늘 먹은 것</span><button class="cal-list-clear" onclick="clearTodayCal()">오늘 초기화</button></div><div id="calList"></div></div>
+    <div class="cal-week-chart"><div class="cal-week-title">📊 이번 주 칼로리</div><div class="cal-bars" id="calBars"></div><div style="display:flex;gap:6px;margin-top:6px" id="calBarLabels"></div></div>
+  </div>
   <div class="page" id="page-stats">
-    <div class="pg-title">감정 통계</div>
-    <div class="pg-sub">나의 감정 흐름을 살펴봐요</div>
-    <div class="stcards">
-      <div class="stcard"><div class="stnum" id="stot">0</div><div class="stlbl">총 기록</div></div>
-      <div class="stcard"><div class="stnum" id="sstrk">0</div><div class="stlbl">연속 일수</div></div>
-      <div class="stcard"><div class="stnum" id="stop">—</div><div class="stlbl">자주 느낀 기분</div></div>
-    </div>
-    <div class="chw">
-      <div class="cht">이번 주 기록</div>
-      <div class="wch" id="wch"></div>
-      <div style="display:flex;gap:6px;margin-top:6px" id="wlbl"></div>
-    </div>
-    <div class="chw">
-      <div class="cht">기분 분포</div>
-      <div id="mbars"></div>
-    </div>
+    <div class="pg-title">감정 통계</div><div class="pg-sub">나의 감정 흐름을 살펴봐요</div>
+    <div class="stcards"><div class="stcard"><div class="stnum" id="stot">0</div><div class="stlbl">총 기록</div></div><div class="stcard"><div class="stnum" id="sstrk">0</div><div class="stlbl">연속 일수</div></div><div class="stcard"><div class="stnum" id="stop">—</div><div class="stlbl">자주 느낀 기분</div></div></div>
+    <div class="chw"><div class="cht">이번 주 기록</div><div class="wch" id="wch"></div><div style="display:flex;gap:6px;margin-top:6px" id="wlbl"></div></div>
+    <div class="chw"><div class="cht">기분 분포</div><div id="mbars"></div></div>
   </div>
 </div>
-
-<!-- 탭바 -->
 <nav class="nav">
   <button class="nav-btn active" onclick="gp('diary')" id="nb-diary"><span class="nav-icon">📔</span><span class="nav-label">일기</span><div class="nav-dot"></div></button>
   <button class="nav-btn" onclick="gp('challenge')" id="nb-challenge"><span class="nav-icon">🏆</span><span class="nav-label">챌린지</span><div class="nav-dot"></div></button>
   <button class="nav-btn" onclick="gp('quote')" id="nb-quote"><span class="nav-icon">🌸</span><span class="nav-label">명언</span><div class="nav-dot"></div></button>
   <button class="nav-btn" onclick="gp('meditate')" id="nb-meditate"><span class="nav-icon">🧘</span><span class="nav-label">명상</span><div class="nav-dot"></div></button>
+  <button class="nav-btn" onclick="gp('calorie')" id="nb-calorie"><span class="nav-icon">🍽️</span><span class="nav-label">칼로리</span><div class="nav-dot"></div></button>
   <button class="nav-btn" onclick="gp('stats')" id="nb-stats"><span class="nav-icon">📊</span><span class="nav-label">통계</span><div class="nav-dot"></div></button>
 </nav>
-
-<div class="pop" id="pop" onclick="if(event.target===this)cpop()">
-  <div class="popbox">
-    <div class="poph"></div>
-    <div class="popic">🌿</div>
-    <div class="popt">오늘의 AI 코칭</div>
-    <div class="popm" id="popm"></div>
-    <div class="popl" id="popl">마음을 읽는 중이에요<span class="popd"><span>.</span><span>.</span><span>.</span></span></div>
-    <div class="popmsg" id="popmsg"></div>
-    <button class="popcl" onclick="cpop()">닫기</button>
-  </div>
-</div>
-<div class="pview" id="pview" onclick="cpview()">
-  <img id="pvimg" src="" alt=""><button class="pvcl" onclick="cpview()">✕</button>
-</div>
+<div class="pop" id="pop" onclick="if(event.target===this)cpop()"><div class="popbox"><div class="poph"></div><div class="popic">🌿</div><div class="popt">오늘의 AI 코칭</div><div class="popm" id="popm"></div><div class="popl" id="popl">마음을 읽는 중이에요<span class="popd"><span>.</span><span>.</span><span>.</span></span></div><div class="popmsg" id="popmsg"></div><button class="popcl" onclick="cpop()">닫기</button></div></div>
+<div class="cal-goal-popup" id="calGoalPop" onclick="if(event.target===this)closeGoalPop()"><div class="cal-goal-popbox"><div class="cal-goal-poph"></div><div class="cal-goal-popt">🎯 목표 칼로리 설정</div><div class="cal-goal-presets"><div class="cal-preset" onclick="setGoalPreset(1500)"><div class="cal-preset-num">1,500</div><div class="cal-preset-lbl">다이어트</div></div><div class="cal-preset" onclick="setGoalPreset(2000)"><div class="cal-preset-num">2,000</div><div class="cal-preset-lbl">표준</div></div><div class="cal-preset" onclick="setGoalPreset(2500)"><div class="cal-preset-num">2,500</div><div class="cal-preset-lbl">활동적</div></div></div><div class="cal-goal-inp-row"><input class="cal-goal-inp" id="calGoalInp" type="number" placeholder="직접 입력 (kcal)" onkeydown="if(event.key==='Enter')saveGoal()"><button class="cal-goal-save" onclick="saveGoal()">저장</button></div></div></div>
+<div class="pview" id="pview" onclick="cpview()"><img id="pvimg" src="" alt=""><button class="pvcl" onclick="cpview()">✕</button></div>
 <div class="toast" id="toast"></div>
 </div>
-
 <script>
 const moods=[
   {n:'신남',c:'#e8a020',s:`<svg width="30" height="30" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="14" fill="#fff9ee" stroke="currentColor" stroke-width="1.8"/><path d="M12 14 L13 16 L15 16 L13.5 17.5 L14 20 L12 18.5 L10 20 L10.5 17.5 L9 16 L11 16Z" fill="currentColor" opacity="0.85"/><path d="M24 14 L25 16 L27 16 L25.5 17.5 L26 20 L24 18.5 L22 20 L22.5 17.5 L21 16 L23 16Z" fill="currentColor" opacity="0.85"/><path d="M11 23 Q18 30 25 23" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/><ellipse cx="10" cy="22" rx="2.5" ry="1.5" fill="rgba(255,150,100,0.3)"/><ellipse cx="26" cy="22" rx="2.5" ry="1.5" fill="rgba(255,150,100,0.3)"/></svg>`},
@@ -583,18 +480,17 @@ const sounds=[
   {id:'night',n:'밤소리',ic:'🌙',g:makeNight},
   {id:'off',n:'소리끄기',ic:'🔇',g:null},
 ];
+const FOOD_ICONS={'밥':'🍚','면':'🍜','라면':'🍜','빵':'🍞','샐러드':'🥗','치킨':'🍗','커피':'☕','아메리카노':'☕','계란':'🥚','바나나':'🍌','사과':'🍎','피자':'🍕','햄버거':'🍔','파스타':'🍝','케이크':'🎂','초콜릿':'🍫','고기':'🥩','삼겹살':'🥩','닭':'🍗','생선':'🐟'};
+function getFoodIcon(name){for(const k in FOOD_ICONS){if(name.includes(k))return FOOD_ICONS[k];}return '🍽️';}
 let cq=0,sm=null,entries=[],chs=[],svqs=[],pps=[],newa=false;
 let tdur=180,trem=180,tint=null,trun=false,bint=null,bph=0,btk=0;
 let cq2=null,cracking=false,parts=[];
 let actx=null,anodes=[],aid=null,mgain=null,vol=50;
 let obc=0;
-
-// 온보딩
+let calItems=[],calGoal=2000,calAllData={};
 function obNext(){obc++;if(obc>=4){finishOb();return;}const s=document.getElementById('ob-slides');s.style.transform=`translateX(-${obc*100}%)`;s.style.transition='transform .4s cubic-bezier(.4,0,.2,1)';document.querySelectorAll('.ob-dot').forEach((d,i)=>d.classList.toggle('active',i===obc));document.getElementById('ob-btn').textContent=obc===3?'시작하기 🌿':'다음 →';if(obc===3)document.getElementById('ob-skip').style.display='none';}
 function finishOb(){const o=document.getElementById('ob');o.style.transition='opacity .5s';o.style.opacity='0';setTimeout(()=>o.style.display='none',500);try{localStorage.setItem('ob','1');}catch(e){}}
 function chkOb(){try{if(localStorage.getItem('ob'))finishOb();}catch(e){}}
-
-// Audio
 function gctx(){if(!actx){actx=new(window.AudioContext||window.webkitAudioContext)();mgain=actx.createGain();mgain.gain.value=vol/100;mgain.connect(actx.destination);}return actx;}
 function stopAll(){anodes.forEach(n=>{try{n.stop();}catch(e){}});anodes=[];}
 function aN(n){anodes.push(n);}
@@ -610,15 +506,11 @@ function makeNight(ctx){const a=mkN(ctx,'brown');const f=ctx.createBiquadFilter(
 function bsg(){document.getElementById('sgrid').innerHTML=sounds.map(s=>`<button class="snbtn" id="sb-${s.id}" onclick="ts('${s.id}')"><span class="sni">${s.ic}</span><span class="snn">${s.n}</span></button>`).join('');}
 function ts(id){if(aid===id){stopAll();aid=null;document.querySelectorAll('.snbtn').forEach(b=>b.classList.remove('active'));document.getElementById('vwrap').classList.remove('show');document.getElementById('np').style.display='none';toast('소리를 껐어요 🔇');return;}document.querySelectorAll('.snbtn').forEach(b=>b.classList.remove('active'));document.getElementById('sb-'+id).classList.add('active');if(id==='off'){stopAll();aid=null;document.getElementById('vwrap').classList.remove('show');document.getElementById('np').style.display='none';toast('소리를 껐어요 🔇');return;}const ctx=gctx();if(ctx.state==='suspended')ctx.resume();stopAll();aid=id;sounds.find(s=>s.id===id)?.g(ctx);document.getElementById('vwrap').classList.add('show');document.getElementById('np').style.display='flex';document.getElementById('npn').textContent=sounds.find(s=>s.id===id)?.n||'';}
 function setV(v){vol=parseInt(v);if(mgain)mgain.gain.value=vol/100;document.getElementById('vl').textContent=vol+'%';}
-
-// 폭죽
 const cv=document.getElementById('cc'),c2=cv.getContext('2d');
 function rsz(){const a=document.getElementById('app');cv.width=a.offsetWidth;cv.height=a.offsetHeight;}
 function launch(){rsz();const cx=cv.width/2,cy=cv.height*.35;const cls=['#f7d98e','#e05070','#5DCAA5','#FEE500','#b07050','#ff9eb5','#a0d8ef','#c8a0f8'];for(let i=0;i<100;i++){const a=Math.random()*Math.PI*2,sp=2.5+Math.random()*7;parts.push({x:cx,y:cy,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-5,col:cls[i%cls.length],sz:3+Math.random()*7,rot:Math.random()*360,rv:(Math.random()-.5)*10,life:1,sh:Math.random()>.5?'r':'c'});}animP();}
 function animP(){c2.clearRect(0,0,cv.width,cv.height);parts=parts.filter(p=>p.life>.01);if(!parts.length){c2.clearRect(0,0,cv.width,cv.height);return;}parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.15;p.rot+=p.rv;p.life-=.016;c2.save();c2.globalAlpha=p.life;c2.fillStyle=p.col;c2.translate(p.x,p.y);c2.rotate(p.rot*Math.PI/180);if(p.sh==='r'){c2.fillRect(-p.sz/2,-p.sz/4,p.sz,p.sz/2);}else{c2.beginPath();c2.arc(0,0,p.sz/2,0,Math.PI*2);c2.fill();}c2.restore();});requestAnimationFrame(animP);}
-
-// 네비
-function gp(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-btn').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+n).classList.add('active');document.getElementById('nb-'+n).classList.add('active');document.getElementById('pages').scrollTop=0;if(n==='stats')rStats();if(n==='challenge')rChs();}
+function gp(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-btn').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+n).classList.add('active');document.getElementById('nb-'+n).classList.add('active');document.getElementById('pages').scrollTop=0;if(n==='stats')rStats();if(n==='challenge')rChs();if(n==='calorie')rCalPage();}
 function sdt(t){['write','record','history'].forEach(x=>{document.getElementById('dt-'+x).classList.toggle('active',x===t);document.getElementById('dp-'+x).classList.toggle('active',x===t);});if(t==='record'){rFlame();rRecent();}if(t==='history')rAll();}
 function bmg(){document.getElementById('mgrid').innerHTML=moods.map((m,i)=>`<button class="mbtn" onclick="pm(${i})" style="color:${m.c}">${m.s}<span class="mname">${m.n}</span></button>`).join('');}
 function pm(i){document.querySelectorAll('.mbtn').forEach(b=>b.classList.remove('sel'));document.querySelectorAll('.mbtn')[i].classList.add('sel');sm=moods[i];}
@@ -628,7 +520,7 @@ function chkT(){const tl=entries.filter(e=>e.dk===tk());if(tl.length>0&&!newa){c
 function allowNew(){newa=true;document.getElementById('atb').style.display='none';document.getElementById('wform').style.cssText='';document.getElementById('jt').focus();}
 function showSov(streak){const o=document.getElementById('sov');document.getElementById('semoji').textContent=['🌿','⭐','🎉','💛','🌸'][Math.floor(Math.random()*5)];document.getElementById('smsg').textContent=SMSGS[Math.floor(Math.random()*SMSGS.length)];document.getElementById('sbadge').textContent=`🔥 ${streak}일 연속 기록 중!`;const n=Math.min(streak,5)||1;document.getElementById('sfm').innerHTML=Array.from({length:n},(_,i)=>`<span style="animation-delay:${.08+i*.13}s">🔥</span>`).join('');o.classList.add('show');}
 function cStr(){if(!entries.length)return 0;const keys=[...new Set(entries.map(e=>e.dk))].sort().reverse();let s=0,cur=new Date();for(const k of keys){const d=new Date(k);if(Math.round((new Date(cur.toISOString().split('T')[0])-d)/86400000)<=1){s++;cur=d;}else break;}return s;}
-function rFlame(){const now=new Date(),rec=new Set(entries.map(e=>e.dk)),str=cStr();document.getElementById('stkn').textContent=str;let h='';for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(d.getDate()-i);const key=d.toISOString().split('T')[0],isOn=rec.has(key),isT=i===0;h+=`<div class="fcol"><div class="ficon${isOn?(isT?' jl':' on'):''}">🔥</div><div class="fday" style="${isT?'color:#4a3728;font-weight:700':''}"">${DAYS[d.getDay()]}</div><div class="fdate">${d.getDate()}일</div></div>`;}document.getElementById('fgrid').innerHTML=h;}
+function rFlame(){const now=new Date(),rec=new Set(entries.map(e=>e.dk)),str=cStr();document.getElementById('stkn').textContent=str;let h='';for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(d.getDate()-i);const key=d.toISOString().split('T')[0],isOn=rec.has(key),isT=i===0;h+=`<div class="fcol"><div class="ficon${isOn?(isT?' jl':' on'):''}">🔥</div><div class="fday" style="${isT?'color:#4a3728;font-weight:700':''}">${DAYS[d.getDay()]}</div><div class="fdate">${d.getDate()}일</div></div>`;}document.getElementById('fgrid').innerHTML=h;}
 function rRecent(){const el=document.getElementById('rent');if(!entries.length){el.innerHTML='<div class="empty">📔 아직 기록이 없어요</div>';return;}el.innerHTML=entries.slice(0,3).map(e=>`<div class="ecard"><div class="eh"><span class="edate">${e.date}</span><span style="font-size:11px;color:${e.mc||'#9a8070'}">${e.mn||''}</span></div><div class="ebody" style="max-height:50px;overflow:hidden">${e.text}</div></div>`).join('');}
 function rAll(){const list=document.getElementById('elist');if(!entries.length){list.innerHTML='<div class="empty">📔 아직 기록이 없어요</div>';return;}list.innerHTML=entries.map(e=>`<div class="ecard"><div class="eh"><span class="edate">${e.date}</span><span style="font-size:11px;color:${e.mc||'#9a8070'}">${e.mn||''}</span></div><div class="ebody">${e.text}</div></div>`).join('');}
 function hphotos(e){const files=Array.from(e.target.files),rem=6-pps.length;if(!rem){toast('최대 6장');return;}files.slice(0,rem).forEach(f=>{const r=new FileReader();r.onload=ev=>{pps.push({d:ev.target.result});rPrev();};r.readAsDataURL(f);});e.target.value='';}
@@ -640,8 +532,6 @@ function opop(m){document.getElementById('popm').textContent=m?`오늘 기분: $
 function cpop(){document.getElementById('pop').classList.remove('show');}
 async function showCoach(entry){opop(entry.mn);try{const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:`오늘 감사일기.\n기분: ${entry.mn}\n기록: ${entry.text}\n\n따뜻하고 공감하는 위로와 응원 3문장. 인사말 없이 바로 시작.`}]})});const data=await res.json();document.getElementById('popl').style.display='none';document.getElementById('popmsg').textContent=data.content.map(c=>c.text||'').join('');document.getElementById('popmsg').style.display='block';}catch(e){document.getElementById('popl').style.display='none';document.getElementById('popmsg').textContent='오늘도 정말 수고했어요 🌿';document.getElementById('popmsg').style.display='block';}}
 async function saveE(){const text=document.getElementById('jt').value.trim();if(!text){toast('오늘 하루를 기록해보세요');return;}const now=new Date();const entry={id:Date.now(),date:now.toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric'}),dk:now.toISOString().split('T')[0],mn:sm?sm.n:'',mc:sm?sm.c:'#9a8070',text,photos:pps.map(p=>p.d)};entries.unshift(entry);try{localStorage.setItem('d-entries',JSON.stringify(entries));}catch(e){}document.getElementById('jt').value='';pps=[];rPrev();document.getElementById('pua').style.display='';document.querySelectorAll('.mbtn').forEach(b=>b.classList.remove('sel'));sm=null;newa=false;const str=cStr();showSov(str);setTimeout(()=>{document.getElementById('sov').classList.remove('show');sdt('record');rFlame();chkT();},1800);setTimeout(()=>showCoach(entry),2600);}
-
-// 챌린지
 function achip(n){document.getElementById('chinp').value=n;ach();}
 function ach(){const inp=document.getElementById('chinp'),name=inp.value.trim();if(!name){toast('챌린지 이름을 입력해주세요');return;}if(chs.find(c=>c.name===name)){toast('이미 있는 챌린지예요');return;}chs.push({id:Date.now(),name,done:false,dd:null,str:0,hist:[],note:''});inp.value='';sCh();rChs();}
 function tCh(id){const today=tk(),ch=chs.find(c=>c.id===id);if(!ch)return;if(!ch.done){ch.done=true;ch.dd=today;if(!ch.hist.includes(today))ch.hist.push(today);ch.str=cCS(ch.hist);}else{ch.done=false;ch.dd=null;ch.hist=ch.hist.filter(d=>d!==today);ch.str=cCS(ch.hist);}sCh();rChs();}
@@ -650,8 +540,6 @@ function dCh(id){chs=chs.filter(c=>c.id!==id);sCh();rChs();}
 function uNote(id,val){const ch=chs.find(c=>c.id===id);if(ch){ch.note=val;sCh();}}
 function rChs(){const today=tk();chs.forEach(ch=>{if(ch.dd!==today)ch.done=false;});const list=document.getElementById('clist');if(!chs.length){list.innerHTML='<div class="cempty">🏆 아직 챌린지가 없어요!</div>';return;}list.innerHTML=chs.map(ch=>{const s=Math.min(ch.str||0,7);const fl=Array.from({length:7},(_,i)=>`<span class="cf${i<s?' on':''}">🔥</span>`).join('');return `<div class="ccard"><div class="ctop"><div class="cchk${ch.done?' done':''}" onclick="tCh(${ch.id})">${ch.done?'✓':''}</div><div class="cname${ch.done?' done':''}">${ch.name}</div><button class="cdel" onclick="dCh(${ch.id})">✕</button></div><div class="csr">${fl}</div><textarea class="cnote" placeholder="오늘 실천 메모..." onchange="uNote(${ch.id},this.value)">${ch.note||''}</textarea></div>`;}).join('');}
 function sCh(){try{localStorage.setItem('d-chs',JSON.stringify(chs));}catch(e){}}
-
-// 명언
 function gCD(){const now=new Date(),mid=new Date(now);mid.setHours(24,0,0,0);const diff=mid-now;const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;}
 setInterval(()=>{const el=document.getElementById('cd');if(el)el.textContent=gCD();},1000);
 function showAB(q){const w=document.getElementById('cwrap');w.classList.add('used');document.getElementById('fhint').textContent='오늘의 명언을 이미 뽑았어요 🍪';document.getElementById('aban').style.display='flex';document.getElementById('ncb').style.display='flex';document.getElementById('cd').textContent=gCD();rQC(q);}
@@ -664,20 +552,29 @@ function rCopy(){document.getElementById('cpa').value='';document.getElementById
 function rSV(){const l=document.getElementById('svlist'),c=document.getElementById('svct');c.textContent=svqs.length?`(${svqs.length})`:'';if(!svqs.length){l.innerHTML='<div class="svem">❤️ 아직 보관한 명언이 없어요<br>쿠키를 탭해서 명언을 뽑아보세요!</div>';return;}l.innerHTML=svqs.map((q,i)=>`<div class="svcard"><button class="svdl" onclick="dSV(${i})">✕</button><div class="svct">${q.i||''} ${q.t}</div><div class="svca">— ${q.a}</div></div>`).join('');}
 function dSV(i){svqs.splice(i,1);sSV();rSV();}
 function sSV(){try{localStorage.setItem('d-svqs',JSON.stringify(svqs));}catch(e){}}
-
-// 명상
 function setD(btn,min){document.querySelectorAll('.dbtn').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');tdur=min*60;trem=tdur;trun=false;clearInterval(tint);clearInterval(bint);uTD();document.getElementById('stbtn').textContent='▶ 시작';document.getElementById('tphase').textContent='준비됐나요?';document.getElementById('bb').style.cssText='width:0%;transition:none';document.getElementById('bt').textContent='명상을 시작하면 호흡을 안내해드려요';document.getElementById('tprog').style.strokeDashoffset='0';}
 function uTD(){const m=Math.floor(trem/60),s=trem%60;document.getElementById('tdisp').textContent=m+':'+String(s).padStart(2,'0');document.getElementById('tprog').style.strokeDashoffset=439.82*(1-trem/tdur);}
 function sBr(){bph=0;btk=0;rBr();bint=setInterval(rBr,1000);}
 function rBr(){const dur=BC[bph],pct=((btk+1)/dur)*100;const bar=document.getElementById('bb');bar.style.transition='width 1s linear';bar.style.width=(bph===0?pct:bph===1?100:100-pct)+'%';document.getElementById('bt').textContent=BL[bph]+' ('+(dur-btk)+'초)';btk++;if(btk>=dur){bph=(bph+1)%3;btk=0;}}
 function togT(){if(trun){clearInterval(tint);clearInterval(bint);trun=false;document.getElementById('stbtn').textContent='▶ 재개';document.getElementById('tphase').textContent='일시정지';}else{if(trem===0)return;trun=true;document.getElementById('stbtn').textContent='⏸ 일시정지';document.getElementById('tphase').textContent='명상 중...';sBr();tint=setInterval(()=>{trem--;uTD();if(trem<=0){clearInterval(tint);clearInterval(bint);trun=false;document.getElementById('tphase').textContent='수고하셨어요 🌿';document.getElementById('stbtn').textContent='▶ 시작';document.getElementById('bt').textContent='명상이 끝났어요.';toast('명상 완료! 수고하셨어요 🌿');if(mgain&&aid){mgain.gain.linearRampToValueAtTime(0,actx.currentTime+3);setTimeout(()=>{stopAll();aid=null;document.querySelectorAll('.snbtn').forEach(b=>b.classList.remove('active'));document.getElementById('vwrap').classList.remove('show');document.getElementById('np').style.display='none';if(mgain)mgain.gain.value=vol/100;},3100);}}},1000);}}
 function rstT(){clearInterval(tint);clearInterval(bint);trun=false;trem=tdur;uTD();document.getElementById('stbtn').textContent='▶ 시작';document.getElementById('tphase').textContent='준비됐나요?';document.getElementById('bb').style.cssText='width:0%;transition:none';document.getElementById('bt').textContent='명상을 시작하면 호흡을 안내해드려요';}
-
-// 통계
+function calTodayKey(){return 'cal-'+tk();}
+function saveCalData(){try{calAllData[calTodayKey()]=calItems;localStorage.setItem('d-cal-all',JSON.stringify(calAllData));localStorage.setItem('d-cal-goal',String(calGoal));}catch(e){}}
+function calTodayTotal(){return calItems.reduce((s,i)=>s+i.kcal,0);}
+function rCalPage(){rCalSummary();rCalList();rCalWeek();}
+function rCalSummary(){const total=calTodayTotal(),remain=calGoal-total,pct=Math.min(100,Math.round(total/calGoal*100));const circ=2*Math.PI*32;const prog=document.getElementById('calRingProg');prog.setAttribute('stroke-dasharray',`${circ*pct/100} ${circ}`);prog.setAttribute('stroke',total>calGoal?'#e05070':'#5DCAA5');document.getElementById('calTodayNum').textContent=total.toLocaleString();document.getElementById('calGoalNum').textContent=calGoal.toLocaleString();document.getElementById('calRemainNum').textContent=remain>0?remain.toLocaleString():'초과 '+Math.abs(remain);document.getElementById('calRemainNum').style.color=remain<0?'#e05070':'#4a3728';const fill=document.getElementById('calProgFill');fill.style.width=pct+'%';fill.className='cal-prog-fill'+(total>calGoal?' over':'');document.getElementById('calProgLbl').textContent=`${total.toLocaleString()} / ${calGoal.toLocaleString()} kcal`;}
+function rCalList(){const list=document.getElementById('calList');if(!calItems.length){list.innerHTML='<div class="cal-empty">🍽️ 오늘 먹은 것을 기록해봐요!</div>';return;}list.innerHTML=calItems.map((item,i)=>`<div class="cal-item"><div class="cal-item-icon">${getFoodIcon(item.name)}</div><div class="cal-item-info"><div class="cal-item-name">${item.name}</div><div class="cal-item-time">${item.time}</div></div><div class="cal-item-kcal">${item.kcal} kcal</div><button class="cal-item-del" onclick="delCalItem(${i})">✕</button></div>`).join('');}
+function rCalWeek(){const now=new Date(),bars=document.getElementById('calBars'),lbls=document.getElementById('calBarLabels');let weekData=[];for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(d.getDate()-i);const key='cal-'+d.toISOString().split('T')[0];const items=calAllData[key]||[];const total=items.reduce((s,x)=>s+x.kcal,0);weekData.push({day:['일','월','화','수','목','금','토'][d.getDay()],total,isToday:i===0});}const maxV=Math.max(...weekData.map(d=>d.total),calGoal,100);bars.innerHTML=weekData.map(d=>{const h=Math.max(d.total/maxV*60,d.total>0?4:2);const cls='cal-bar'+(d.isToday?' today':d.total>calGoal?' over':'');return `<div class="cal-bar-col"><div class="${cls}" style="height:${h}px"></div></div>`;}).join('');lbls.innerHTML=weekData.map(d=>`<div style="flex:1;text-align:center;font-size:9px;color:${d.isToday?'#4a3728':'#bba990'};font-weight:${d.isToday?700:400}">${d.day}</div>`).join('');}
+function addCalItem(){const name=document.getElementById('calFoodName').value.trim();const kcal=parseInt(document.getElementById('calKcal').value);if(!name){toast('음식 이름을 입력해주세요');return;}if(!kcal||kcal<=0){toast('칼로리를 입력해주세요');return;}const now=new Date();const time=now.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'});calItems.unshift({id:Date.now(),name,kcal,time});saveCalData();document.getElementById('calFoodName').value='';document.getElementById('calKcal').value='';rCalPage();toast(`${name} ${kcal}kcal 추가됐어요 ✅`);}
+function delCalItem(i){calItems.splice(i,1);saveCalData();rCalPage();}
+function clearTodayCal(){if(!calItems.length){toast('오늘 기록이 없어요');return;}if(confirm('오늘 칼로리 기록을 모두 지울까요?')){calItems=[];saveCalData();rCalPage();toast('오늘 기록을 초기화했어요');}}
+function qCalChip(name,kcal){document.getElementById('calFoodName').value=name;document.getElementById('calKcal').value=kcal;document.getElementById('calKcal').focus();}
+function openGoalPop(){document.getElementById('calGoalPop').classList.add('show');document.getElementById('calGoalInp').value=calGoal;}
+function closeGoalPop(){document.getElementById('calGoalPop').classList.remove('show');}
+function setGoalPreset(v){calGoal=v;saveCalData();closeGoalPop();rCalPage();toast(`목표 칼로리를 ${v.toLocaleString()}kcal로 설정했어요 🎯`);}
+function saveGoal(){const v=parseInt(document.getElementById('calGoalInp').value);if(!v||v<100||v>9999){toast('100~9999 사이로 입력해주세요');return;}calGoal=v;saveCalData();closeGoalPop();rCalPage();toast(`목표 칼로리를 ${v.toLocaleString()}kcal로 설정했어요 🎯`);}
 function rStats(){document.getElementById('stot').textContent=entries.length;document.getElementById('sstrk').textContent=cStr();const mc={};entries.forEach(e=>{if(e.mn)mc[e.mn]=(mc[e.mn]||0)+1;});const top=Object.entries(mc).sort((a,b)=>b[1]-a[1])[0];document.getElementById('stop').textContent=top?top[0]:'—';const now=new Date(),wd=[];for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(d.getDate()-i);const key=d.toISOString().split('T')[0];const de=entries.filter(e=>e.dk===key);wd.push({day:DAYS[d.getDay()],count:de.length,mood:de[0]?.mn||''});}const maxC=Math.max(...wd.map(d=>d.count),1);document.getElementById('wch').innerHTML=wd.map(d=>`<div class="wcol"><div class="wem">${d.mood}</div><div class="wbar" style="height:${Math.max(d.count/maxC*60,d.count?4:2)}px;opacity:${d.count?1:.2}"></div></div>`).join('');document.getElementById('wlbl').innerHTML=wd.map(d=>`<div style="flex:1;text-align:center;font-size:10px;color:#bba990">${d.day}</div>`).join('');const sorted=Object.entries(mc).sort((a,b)=>b[1]-a[1]).slice(0,6),maxM=sorted[0]?.[1]||1;document.getElementById('mbars').innerHTML=sorted.length?sorted.map(([k,v])=>`<div class="brow"><span class="blbl2">${k}</span><div class="btr"><div class="bf" style="width:${Math.round(v/maxM*100)}%"></div></div><span class="bc">${v}</span></div>`).join(''):'<div style="font-size:13px;color:#bba990;text-align:center;padding:1rem 0">기록이 쌓이면 통계가 나타나요</div>';}
-
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
-
 async function init(){
   const now=new Date();
   document.getElementById('tdate').textContent=now.toLocaleDateString('ko-KR',{month:'long',day:'numeric',weekday:'short'});
@@ -687,6 +584,9 @@ async function init(){
   try{const s=localStorage.getItem('d-entries');if(s)entries=JSON.parse(s);}catch(e){entries=[];}
   try{const s=localStorage.getItem('d-chs');if(s)chs=JSON.parse(s);}catch(e){chs=[];}
   try{const s=localStorage.getItem('d-svqs');if(s)svqs=JSON.parse(s);}catch(e){svqs=[];}
+  try{const s=localStorage.getItem('d-cal-all');if(s)calAllData=JSON.parse(s);}catch(e){calAllData={};}
+  try{const g=localStorage.getItem('d-cal-goal');if(g)calGoal=parseInt(g);}catch(e){calGoal=2000;}
+  calItems=calAllData[calTodayKey()]||[];
   rSV(); chkT();
   try{const s=localStorage.getItem('dq');if(s){const d=JSON.parse(s);if(d.date===tk())showAB(d.quote);}}catch(e){}
   chkOb();
